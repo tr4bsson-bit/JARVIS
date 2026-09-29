@@ -25,5 +25,6 @@ workflows:
             -destination 'generic/platform=iOS' \
             CODE_SIGNING_ALLOWED=NO \
             build
+ 
     artifacts:
-      - SAMURAY_JARVIS_iOS/build/**/*
+      - SAMURAY_JARVIS_iOS/build/Build/Products/Release-iphoneos/*.app

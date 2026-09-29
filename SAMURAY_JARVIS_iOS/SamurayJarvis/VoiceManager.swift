@@ -18,7 +18,16 @@ final class VoiceManager: NSObject, ObservableObject, AVSpeechSynthesizerDelegat
 
     override init() { super.init(); speaker.delegate = self }
 
-    func toggle() { listening ? stop() : Task { await start() } }
+    
+func toggle() {
+    if listening {
+        stop()
+    } else {
+        Task {
+            await start()
+        }
+    }
+}
 
     private func start() async {
         guard !listening else { return }

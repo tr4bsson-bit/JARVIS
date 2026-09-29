@@ -14,6 +14,7 @@ workflows:
         script: |
           cd SAMURAY_JARVIS_iOS
           xcodegen generate
+      
       - name: Compilar aplicativo
         script: |
           cd SAMURAY_JARVIS_iOS
@@ -23,6 +24,7 @@ workflows:
             -configuration Release \
             -sdk iphoneos \
             -destination 'generic/platform=iOS' \
+            -derivedDataPath build \
             CODE_SIGNING_ALLOWED=NO \
             build
  
